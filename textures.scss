@@ -1,0 +1,164 @@
+@mixin spikey_background($color, $size) {
+    background: linear-gradient(315deg, transparent 75%, $color 0) ($size * -10px) 0,
+        linear-gradient(45deg, transparent 75%, $color 0) ($size * -10px) 0,
+        linear-gradient(135deg, darken($color, 25%) 50%, transparent 0) 0 0,
+        linear-gradient(45deg, darken($color, 45%) 50%, darken($color, 50%) 0) 0 0 darken($color, 50%);
+    background-size: ($size * 20px) ($size * 20px);
+}
+
+@mixin wavey_background($color, $background, $size) {
+    background:
+        radial-gradient(circle at 100% 50%, transparent 20%, rgba($color,.3) 21%, rgba($color,.3) 34%, transparent 35%, transparent),
+        radial-gradient(circle at 0% 50%, transparent 20%, rgba($color,.3) 21%, rgba($color,.3) 34%, transparent 35%, transparent) 0 ($size * -50px);
+    background-color: $background;
+    background-size:($size * 75px) ($size * 100px);
+}
+
+@mixin couch_background($background, $color, $size) {
+    background: $background;
+    background:
+        radial-gradient(darken($background, 23%) 4%, darken($background, 32%) 9%, rgba(darken($background, 30%), 0) 9%) 0 0,
+        radial-gradient(darken($background, 23%) 4%, darken($background, 32%) 8%, rgba(darken($background, 30%), 0) 10%) ($size * 50px) ($size * 50px),
+        radial-gradient(rgba(darken($background, 20%), 0.8) 20%, rgba(darken($background, 30%), 0)) ($size * 50px) 0,
+        radial-gradient(rgba(darken($background, 20%), 0.8) 20%, rgba(darken($background, 30%), 0)) 0 ($size * 50px),
+        radial-gradient(rgba(darken($background, 30%), 1) 35%, rgba(darken($background, 30%), 0) 60%) ($size * 50px) 0,
+        radial-gradient(rgba(darken($background, 30%), 1) 35%, rgba(darken($background, 30%), 0) 60%) ($size * 100px) ($size * 50px),
+        radial-gradient(rgba(darken($background, 35%), 0.7), rgba(darken($background, 30%), 0)) 0 0,
+        radial-gradient(rgba(darken($background, 35%), 0.7), rgba(darken($background, 30%), 0)) ($size * 50px) ($size * 50px),
+        linear-gradient(45deg, rgba(darken($background, 30%), 0) 49%, rgba(darken($background, 0%), 1) 50%, rgba(darken($background, 30%), 0) 70%) 0 0,
+        linear-gradient(-45deg, rgba(darken($background, 30%), 0) 49%, rgba(darken($background, 0%), 1) 50%, rgba(darken($background, 30%), 0) 70%) 0 0, $color;
+    background-size: ($size * 100px) ($size * 100px);
+}
+
+@mixin triangle_background($color, $background, $size) {
+    background: $background;
+    background:
+        linear-gradient(115deg, transparent 75%, rgba($color,.8) 75%) 0 0,
+        linear-gradient(245deg, transparent 75%, rgba($color,.8) 75%) 0 0,
+        linear-gradient(115deg, transparent 75%, rgba($color,.8) 75%) ($size * 7px) ($size * -15px),
+        linear-gradient(245deg, transparent 75%, rgba($color,.8) 75%) ($size * 7px) ($size * -15px),
+        $background;
+    background-size: ($size * 15px) ($size * 30px);
+}
+
+@mixin argyle_background($color, $lineColor, $size) {
+    background-color: $color;
+    background-image:
+        repeating-linear-gradient(120deg, rgba($lineColor,.1), rgba($lineColor,.1) 1px, transparent 1px, transparent ($size * 60px)),
+        repeating-linear-gradient(60deg, rgba($lineColor,.1), rgba($lineColor,.1) 1px, transparent 1px, transparent ($size * 60px)),
+        linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+        linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+    background-size: ($size * 70px) ($size * 120px);
+}
+
+@mixin arches_background($color, $background, $size) {
+    background-color:$background;
+    background-image:
+        radial-gradient(circle at 100% 150%, $background 24%, $color 24%, $color 28%, $background 28%, $background 36%, $color 36%, $color 40%, transparent 40%, transparent),
+        radial-gradient(circle at 0    150%, $background 24%, $color 24%, $color 28%, $background 28%, $background 36%, $color 36%, $color 40%, transparent 40%, transparent),
+        radial-gradient(circle at 50%  100%, $color 10%, $background 10%, $background 23%, $color 23%, $color 30%, $background 30%, $background 43%, $color 43%, $color 50%, $background 50%, $background 63%, $color 63%, $color 71%, transparent 71%, transparent),
+        radial-gradient(circle at 100% 50%, $color 5%, $background 5%, $background 15%, $color 15%, $color 20%, $background 20%, $background 29%, $color 29%, $color 34%, $background 34%, $background 44%, $color 44%, $color 49%, transparent 49%, transparent),
+        radial-gradient(circle at 0    50%, $color 5%, $background 5%, $background 15%, $color 15%, $color 20%, $background 20%, $background 29%, $color 29%, $color 34%, $background 34%, $background 44%, $color 44%, $color 49%, transparent 49%, transparent);
+    background-size: ($size * 100px) ($size * 50px);
+}
+
+@mixin vertical_stripes_background($color, $size) {
+    background-color: $color;
+    background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+        linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+        linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+        linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+    background-size: ($size * 13px), ($size * 29px), ($size * 37px), ($size * 53px);
+}
+
+@mixin weave_background($color, $size) {
+    background-color: darken($color, 30%);
+    background: linear-gradient(45deg, lighten($color, 30%) 12%, transparent 0, transparent 88%, lighten($color, 30%) 0),
+        linear-gradient(135deg, transparent 37%, $color 0, $color 63%, transparent 0),
+        linear-gradient(45deg, transparent 37%, lighten($color, 30%) 0, lighten($color, 30%) 63%, transparent 0) darken($color, 30%);
+    background-size: ($size * 25px) ($size * 25px);
+}
+
+@mixin tartan_background($color, $size) {
+    background-color: $color;
+    background-image: repeating-linear-gradient(transparent, transparent ($size * 50px), rgba(0,0,0,.4) ($size * 50px), rgba(0,0,0,.4) ($size * 53px), transparent ($size * 53px), transparent ($size * 63px), rgba(0,0,0,.4) ($size * 63px), rgba(0,0,0,.4) ($size * 66px), transparent ($size * 66px), transparent ($size * 116px), rgba(0,0,0,.5) ($size * 116px), rgba(0,0,0,.5) ($size * 166px), rgba(255,255,255,.2) ($size * 166px), rgba(255,255,255,.2) ($size * 169px), rgba(0,0,0,.5) ($size * 169px), rgba(0,0,0,.5) ($size * 179px), rgba(255,255,255,.2) ($size * 179px), rgba(255,255,255,.2) ($size * 182px), rgba(0,0,0,.5) ($size * 182px), rgba(0,0,0,.5) ($size * 232px), transparent ($size * 232px)),
+        repeating-linear-gradient(270deg, transparent, transparent ($size * 50px), rgba(0,0,0,.4) ($size * 50px), rgba(0,0,0,.4) ($size * 53px), transparent ($size * 53px), transparent ($size * 63px), rgba(0,0,0,.4) ($size * 63px), rgba(0,0,0,.4) ($size * 66px), transparent ($size * 66px), transparent ($size * 116px), rgba(0,0,0,.5) ($size * 116px), rgba(0,0,0,.5) ($size * 166px), rgba(255,255,255,.2) ($size * 166px), rgba(255,255,255,.2) ($size * 169px), rgba(0,0,0,.5) ($size * 169px), rgba(0,0,0,.5) ($size * 179px), rgba(255,255,255,.2) ($size * 179px), rgba(255,255,255,.2) ($size * 182px), rgba(0,0,0,.5) ($size * 182px), rgba(0,0,0,.5) ($size * 232px), transparent ($size * 232px)),
+        repeating-linear-gradient(125deg, transparent, transparent ($size * 2px), rgba(0,0,0,.2) ($size * 2px), rgba(0,0,0,.2) ($size * 3px), transparent ($size * 3px), transparent ($size * 5px), rgba(0,0,0,.2) ($size * 5px));
+}
+
+@mixin hex_background($color, $background, $size) {
+    background:
+        radial-gradient(circle farthest-side at 0% 50%,$color 23.5%,rgba(240,166,17,0) 0) ($size * 21px) ($size * 30px),
+        radial-gradient(circle farthest-side at 0% 50%,$background 24%,rgba(240,166,17,0) 0) ($size * 19px) ($size * 30px),
+        linear-gradient($color 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,$color 0)0 0,
+        linear-gradient(150deg,$color 24%,$background 0,$background 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,$background 0,$background 76%,$color 0)0 0,
+        linear-gradient(30deg,$color 24%,$background 0,$background 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,$background 0,$background 76%,$color 0)0 0,
+        linear-gradient(90deg,$background 2%,$color 0,$color 98%,$background 0%)0 0 $color;
+    background-size: ($size * 40px) ($size * 60px);
+}
+
+@mixin sloped_background($color, $background, $size) {
+    background:
+        linear-gradient(63deg, $color 23%, transparent 23%) ($size * 7px) 0,
+        linear-gradient(63deg, transparent 74%, $color 78%),
+        linear-gradient(63deg, transparent 34%, $color 38%, $color 58%, transparent 62%),
+        $background;
+    background-size: ($size * 16px) ($size * 48px);
+}
+
+@mixin cubes_background($colorA, $colorB, $colorC, $size){
+    background-color:$colorA;
+    background-image: linear-gradient(30deg, $colorB 12%, transparent 12.5%, transparent 87%, $colorB 87.5%, $colorB),
+        linear-gradient(150deg, $colorB 12%, transparent 12.5%, transparent 87%, $colorB 87.5%, $colorB),
+        linear-gradient(30deg, $colorB 12%, transparent 12.5%, transparent 87%, $colorB 87.5%, $colorB),
+        linear-gradient(150deg, $colorB 12%, transparent 12.5%, transparent 87%, $colorB 87.5%, $colorB),
+        linear-gradient(60deg, $colorC 25%, transparent 25.5%, transparent 75%, $colorC 75%, $colorC),
+        linear-gradient(60deg, $colorC 25%, transparent 25.5%, transparent 75%, $colorC 75%, $colorC);
+        background-size:($size * 80px) ($size * 140px);
+        background-position: 0 0, 0 0, ($size * 40px) ($size * 70px), ($size * 40px) ($size * 70px), 0 0, ($size * 40px) ($size * 70px);
+}
+
+@mixin cubes_up_background($color, $size){
+    @include cubes_background(darken($color, 30%), lighten($color, 30%), $color, $size)
+}
+
+@mixin cubes_down_background($color, $size){
+    @include cubes_background($color,darken($color, 30%), lighten($color, 30%), $size)
+}
+
+@mixin zigzag_background($color, $background, $size) {
+    background:
+        linear-gradient(135deg, $color 25%, transparent 25%) ($size * -50px) 0,
+        linear-gradient(225deg, $color 25%, transparent 25%) ($size * -50px) 0,
+        linear-gradient(315deg, $color 25%, transparent 25%),
+        linear-gradient(45deg, $color 25%, transparent 25%);
+    background-color: $background;
+    background-size: ($size * 100px) ($size * 100px);
+}
+
+@mixin dotted_background($color, $background, $size) {
+    background-color:$background;
+    background-image: radial-gradient($color 15%, transparent 16%),
+        radial-gradient($color 15%, transparent 16%);
+    background-size: ($size * 60px) ($size  * 60px);
+    background-position: 0 0, ($size * 30px) ($size * 30px);
+}
+
+@mixin starry_background($color, $background, $size) {
+    background:
+        linear-gradient(324deg, $background 4%,   transparent 4%) ($size * -70px) ($size * 43px),
+        linear-gradient( 36deg, $background 4%,   transparent 4%) ($size * 30px) ($size * 43px),
+        linear-gradient( 72deg, $color 8.5%, transparent 8.5%) ($size * 30px) ($size * 43px),
+        linear-gradient(288deg, $color 8.5%, transparent 8.5%) ($size * -70px) ($size * 43px),
+        linear-gradient(216deg, $color 7.5%, transparent 7.5%) ($size * -70px) ($size * 23px),
+        linear-gradient(144deg, $color 7.5%, transparent 7.5%) ($size * 30px) ($size * 23px),
+
+        linear-gradient(324deg, $background 4%,   transparent 4%) ($size * -20px) ($size * 93px),
+        linear-gradient( 36deg, $background 4%,   transparent 4%) ($size * 80px) ($size * 93px),
+        linear-gradient( 72deg, $color 8.5%, transparent 8.5%) ($size * 80px) ($size * 93px),
+        linear-gradient(288deg, $color 8.5%, transparent 8.5%) ($size * -20px) ($size * 93px),
+        linear-gradient(216deg, $color 7.5%, transparent 7.5%) ($size * -20px) ($size * 73px),
+        linear-gradient(144deg, $color 7.5%, transparent 7.5%) ($size * 80px) ($size * 73px);
+    background-color: $background;
+    background-size: ($size * 100px) ($size * 100px);
+}
