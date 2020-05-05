@@ -6,12 +6,641 @@
     background-size: ($size * 20px) ($size * 20px);
 }
 
+$rainbowBurstColors : #fedc00 0,
+            #fedc00 1/18 * 100%,
+            #fcb712 0,
+            #fcb712 2/18 * 100%,
+            #f7921e 0,
+            #f7921e 3/18 * 100%,
+            #e87f24 0,
+            #e87f24 4/18 * 100%,
+            #dd6227 0,
+            #dd6227 5/18 * 100%,
+            #dc4c27 0,
+            #dc4c27 6/18 * 100%,
+            #ca3435 0,
+            #ca3435 7/18 * 100%,
+            #b82841 0,
+            #b82841 8/18 * 100%,
+            #953751 0,
+            #953751 9/18 * 100%,
+            #364c88 0,
+            #364c88 10/18 * 100%,
+            #16599d 0,
+            #16599d 11/18 * 100%,
+            #02609e 0,
+            #02609e 12/18 * 100%,
+            #0073a9 0,
+            #0073a9 13/18 * 100%,
+            #008aa4 0,
+            #008aa4 14/18 * 100%,
+            #239a87 0,
+            #239a87 15/18 * 100%,
+            #7cba6d 0,
+            #7cba6d 16/18 * 100%,
+            #becc2f 0,
+            #becc2f 17/18 * 100%,
+            #e0d81d 0,
+            #e0d81d 18/18 * 100%;
+
+@mixin rainbow_burst_background(){
+    background:
+        repeating-radial-gradient(circle at bottom left, $rainbowBurstColors),
+        repeating-radial-gradient(circle at bottom right, $rainbowBurstColors);
+    background-blend-mode: overlay;
+    height: 100vh;
+}
+
+@mixin biohazard_background($color, $background, $size) {
+    background-color: $background;
+    background-image:
+        repeating-radial-gradient(
+            circle at ($size * 1.01em) ($size * 1.07em),
+            $background,
+            $background ($size * 0.07em),
+            transparent ($size * 0.085em),
+            transparent ($size * 2em)),
+        repeating-radial-gradient(
+            circle at ($size * 1.45em) ($size * 1.3em),
+            transparent,
+            transparent ($size * 0.3em),
+            $background ($size * 0.315em),
+            $background ($size * 0.34em),
+            transparent ($size * 0.355em),
+            transparent ($size * 2em)),
+        repeating-radial-gradient(
+            circle at ($size * 0.57em) ($size * 1.3em),
+            transparent,
+            transparent ($size * 0.3em),
+            $background ($size * 0.315em),
+            $background ($size * 0.34em),
+            transparent ($size * 0.355em),
+            transparent ($size * 2em)),
+        repeating-radial-gradient(
+            circle at ($size * 1em) ($size * 0.58em),
+            transparent,
+            transparent ($size * 0.3em),
+            $background ($size * 0.315em),
+            $background ($size * 0.34em),
+            transparent ($size * 0.355em),
+            transparent ($size * 2em)),
+        repeating-radial-gradient(
+            circle at ($size * 1.01em) ($size * 1.06em),
+            transparent,
+            transparent ($size * 0.3em),
+            $color ($size * 0.315em),
+            $color ($size * 0.4em),
+            transparent ($size * 0.415em),
+            transparent ($size * 2em)),
+        repeating-radial-gradient(
+            circle at ($size * 1em) ($size * 0.58em),
+            $background,
+            $background ($size * 0.34em),
+            transparent ($size * 0.355em),
+            transparent ($size * 2em)),
+        repeating-radial-gradient(
+            circle at ($size * 1em) ($size * 0.65em),
+            $color,
+            $color ($size * 0.4em),
+            transparent ($size * 0.415em),
+            transparent ($size * 2em)),
+        repeating-radial-gradient(
+            circle at ($size * 0.57em) ($size * 1.3em),
+            $background,
+            $background ($size * 0.34em),
+            transparent ($size * 0.355em),
+            transparent ($size * 2em)),
+        repeating-radial-gradient(
+            circle at ($size * 0.65em) ($size * 1.25em),
+            $color,
+            $color ($size * 0.4em),
+            transparent ($size * 0.415em),
+            transparent ($size * 2em)),
+        repeating-radial-gradient(
+            circle at ($size * 1.45em) ($size * 1.3em),
+            $background,
+            $background ($size * 0.34em),
+            transparent ($size * 0.355em),
+            transparent ($size * 2em)),
+        repeating-radial-gradient(
+            circle at ($size * 1.35em) ($size * 1.25em),
+            $color,
+            $color ($size * 0.4em),
+            transparent ($size * 0.415em),
+            transparent ($size * 2em));
+    background-size:($size * 2em)  ($size * 2em);
+}
+
+@mixin spotty_background($color, $background, $size){
+    position: relative;
+    height: 90vh;
+    box-shadow: 2px 2px 5px;
+    background: $background;
+    filter: contrast(7);
+    --mask: linear-gradient($color, #{rgba($color, .45)});
+
+    &::before {
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        background:
+            radial-gradient($color, transparent) 0 0/ 1em 1em space;
+        -webkit-mask: var(--mask);
+                        mask: var(--mask);
+        content: ''
+    }
+}
+
 @mixin wavey_background($color, $background, $size) {
     background:
         radial-gradient(circle at 100% 50%, transparent 20%, rgba($color,.3) 21%, rgba($color,.3) 34%, transparent 35%, transparent),
         radial-gradient(circle at 0% 50%, transparent 20%, rgba($color,.3) 21%, rgba($color,.3) 34%, transparent 35%, transparent) 0 ($size * -50px);
     background-color: $background;
     background-size:($size * 75px) ($size * 100px);
+}
+
+@mixin big_waves_background($color, $background, $size){
+    background-color: $background;
+        background-image:
+            repeating-radial-gradient(
+                circle at 0em 0em,
+                transparent,
+                transparent 0.32em,
+                $color 0.33em,
+                $color 0.6em,
+                transparent 0.61em,
+                transparent 2em),
+            repeating-radial-gradient(
+                circle at 0.93em 0.93em,
+                transparent,
+                transparent 0.32em,
+                $color 0.33em,
+                $color 0.6em,
+                transparent 0.61em,
+                transparent 2em);
+        background-size: 1em 1em;
+}
+
+// Animations
+@keyframes scrolling-animation-west {
+  from{ background-position-x: 0px }
+  to{ background-position-x: -100px }
+}
+
+@keyframes scrolling-animation-east {
+    from{ background-position-x: 0px }
+    to{ background-position-x: 100px }
+}
+
+@keyframes scrolling-animation-north {
+    from{ background-position-y: 0px }
+    to{ background-position-y: -100px}
+}
+
+@keyframes scrolling-animation-south {
+    from{ background-position-y: 0px }
+    to{ background-position-y: 100px }
+}
+
+// Animations
+@keyframes gradient-animation-west {
+  0%{ left: 0%; }
+  100%{ left: -100%; }
+}
+
+@keyframes gradient-animation-east {
+  0%{ right: 0%; }
+  100%{ right: 100%; }
+}
+
+@keyframes gradient-animation-north {
+  0%{ top: 0%; }
+  100%{ top: -100%; }
+}
+
+@keyframes gradient-animation-south {
+  0%{ bottom: 0%; }
+  100%{ bottom: -100%; }
+}
+
+@mixin animated_before($method, $type, $time){
+    &:before {
+      animation: $time linear 0s infinite running #{$method}-animation-#{type};
+    }
+}
+
+@mixin animated($method, $type, $time){
+    animation: $time linear 0s infinite running #{$method}-animation-#{type};
+}
+
+@mixin loose_plaid_background($color, $background, $size){
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent 0,
+        transparent 32px,
+        white 32px,
+        white 44px,
+        transparent 44px,
+        transparent 56px,
+        white 56px,
+        white 68px,
+        transparent 0),
+      repeating-linear-gradient(
+        -45deg,
+        transparent 0,
+        transparent 32px,
+        white 32px,
+        white 44px,
+        transparent 44px,
+        transparent 56px,
+        white 56px,
+        white 68px,
+        transparent 0
+      ),
+    linear-gradient(to bottom left, $color, $background);
+}
+
+@mixin tight_plaid_background($color, $background, $size){
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        white 0,
+        white 20px,
+        transparent 20px,
+        transparent 32px,
+        white 32px,
+        white 44px,
+        transparent 44px,
+        transparent 56px,
+        white 56px,
+        white 68px,
+        transparent 68px,
+        transparent 80px,
+        white 0
+    ),
+      repeating-linear-gradient(
+        -45deg,
+        white 0,
+        white 20px,
+        transparent 20px,
+        transparent 32px,
+        white 32px,
+        white 44px,
+        transparent 44px,
+        transparent 56px,
+        white 56px,
+        white 68px,
+        transparent 68px,
+        transparent 80px,
+        white 0
+    ),
+    linear-gradient(to bottom right, $color, $background);
+}
+
+@mixin diamond_background($color, $background, $size){
+    background-image: radial-gradient(
+        ellipse at center,
+        Crimson 0%,
+        rgba(0,0,0,1) 100%);
+
+    &:before {
+        content: '';
+        left: 0;
+        top:0px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background:
+          repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 1px,
+            rgba(0, 0, 0, .2) 1px,
+            rgba(255,255,255, .1) 10px
+          ),
+          repeating-linear-gradient(
+            -45deg, transparent,
+            transparent 1px,
+            rgba(0, 0, 0, .2) 1px,
+            rgba(255,255,255, .1) 10px
+          );
+    }
+}
+
+@mixin blueprint_background($color, $background, $size){
+    background-color: $background;
+    background-image:
+      linear-gradient(rgba($color,.5) 2px, transparent 2px),
+      linear-gradient(90deg, rgba($color,.5) 2px, transparent 2px),
+      linear-gradient(rgba($color,.28) 1px, transparent 1px),
+      linear-gradient(90deg, rgba($color,.28) 1px, transparent 1px);
+    background-size:
+        ($size * 100px) ($size * 100px),
+        ($size * 100px) ($size * 100px),
+        ($size * 20px) ($size * 20px),
+        ($size * 20px) ($size * 20px);
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+@mixin fullscreen_base(){
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    pointer-events: none;
+
+}
+@mixin wood_grad($color, $thickness, $opacity, $lower, $upper, $append){
+    $woodyGradient: radial-gradient(
+        1.5em 6.28571em at 1.95em,
+        rgba($color, 0) $lower,
+        rgba($color, $opacity) $lower,
+        rgba($color, $opacity) $upper,
+        rgba($color, 0) $upper
+    ) 0 0,
+    radial-gradient(
+        1.5em 6.28571em at -0.45em,
+        rgba($color, 0) $lower,
+        rgba($color, $opacity) $lower,
+        rgba($color, $opacity) $upper,
+        rgba($color, 0) $upper
+    ) 1.5em 5.5em,
+    radial-gradient(2.3em 4.57143em at 2.99em,
+        rgba($color, 0) $lower,
+        rgba($color, 0.3) $lower,
+        rgba($color, 0.3) $upper,
+        rgba($color, 0) $upper
+    ) 0 0,
+    radial-gradient(
+        2.3em 4.57143em at -0.69em,
+        rgba($color, 0) $lower,
+        rgba($color, 0.3) $lower,
+        rgba($color, 0.3) $upper,
+        rgba($color, 0) $upper
+    ) 2.3em 4em,
+    radial-gradient(
+        3.5em 6.28571em at 4.55em,
+        rgba($color, 0) $lower,
+        rgba($color, $opacity) $lower,
+        rgba($color, $opacity) $upper,
+        rgba($color, 0) $upper
+    ) 0 0,
+    radial-gradient(
+        3.5em 6.28571em at -1.05em,
+        rgba($color, 0) $lower,
+        rgba($color, $opacity) $lower,
+        rgba($color, $opacity) $upper,
+        rgba($color, 0) $upper
+    ) 3.5em 5.5em,
+    radial-gradient(
+        1.5em 6.28571em at 2.8em,
+        rgba($color, 0) $lower,
+        rgba($color, $opacity) $lower,
+        rgba($color, $opacity) $upper,
+        rgba($color, 0) $upper
+    ) 0 0,
+    radial-gradient(
+        1.5em 6.28571em at -0.50em,
+        rgba($color, 0) $lower,
+        rgba($color, $opacity) $lower,
+        rgba($color, $opacity) $upper,
+        rgba($color, 0) $upper
+    ) 2.2em 4.5em;
+    background: #{$woodyGradient} #{$append};
+}
+
+@mixin wood_sizes($color, $thickness, $opacity, $lower, $upper, $append){
+    $woodySizes : 1.5em 11em,
+        1.5em 11em,
+        2.3em 8em,
+        2.3em 8em,
+        3.5em 11em,
+        3.5em 11em,
+        2.2em 9em,
+        2.2em 9em;
+    background-size: #{$woodySizes} #{$append};
+}
+
+
+@mixin wood_ish($color, $thickness, $opacity, $appendGrad, $appendSizes){
+    $lower : (50 - ($thickness/2));
+    $upper : (50 + ($thickness/2));
+    @include wood_grad($color, $thickness, $opacity, $lower, $upper, $appendGrad);
+    @include wood_sizes($color, $thickness, $opacity, $lower, $upper, $appendSizes);
+}
+
+@mixin ash_background(){
+    @include woody_background(#E0AC69, #FFDBAC, 0.1);
+}
+
+@mixin mahogony_background(){
+    @include woody_background(#A03000, #C04000, 0.1);
+}
+
+@mixin cherry_background(){
+    @include woody_background(#5A0C0C, #6A1616, 0.1);
+}
+
+@mixin ebony_background(){
+    @include woody_background(#232920, #2C3227, 0.1);
+}
+
+@mixin woody_background($color, $background, $size){
+  $altered : lighten($color, 5);
+  background-color: $background;
+  @include wood_ish($background, 15%, 5, ', radial-gradient(#{$background}, #{$altered})', ', 100% 100%');
+  background-repeat: repeat;
+  &:before{
+      @include fullscreen_base();
+      transform: rotate(1deg);
+      @include wood_ish($color, 8%, 0.001, '', '');
+      background-repeat: repeat;
+  }
+  &:after{
+      @include fullscreen_base();
+      z-index: -1;
+      transform: rotate(-2deg);
+      @include wood_ish(darken($color, 20%), 2%, 0.5, '', '');
+      background-repeat: repeat;
+  }
+}
+
+@mixin aquatic_background($color, $background, $size){
+    $ca : hsla(hue($color), (saturation($color)* 0.2) , lightness($color), alpha($color));
+    $cb : hsla(hue($background), (saturation($background)* 1.5) , lightness($background), alpha($background));
+    background:
+        radial-gradient(
+            1.5em 6.28571em at 1.95em,
+            rgba($color, 0) 50%,
+            rgba($color, 0.25) 50%,
+            rgba($color, 0.25) 55%,
+            rgba($color, 0) 55%
+        ) 0 0,
+        radial-gradient(
+            1.5em 6.28571em at -0.45em,
+            rgba($color, 0) 50%,
+            rgba($color, 0.25) 50%,
+            rgba($color, 0.25) 55%,
+            rgba($color, 0) 55%
+        ) 1.5em 5.5em,
+        radial-gradient(2.3em 4.57143em at 2.99em,
+            rgba($color, 0) 50%,
+            rgba($color, 0.3) 50%,
+            rgba($color, 0.3) 55%,
+            rgba($color, 0) 55%
+        ) 0 0,
+        radial-gradient(
+            2.3em 4.57143em at -0.69em,
+            rgba($color, 0) 50%,
+            rgba($color, 0.3) 50%,
+            rgba($color, 0.3) 55%,
+            rgba($color, 0) 55%
+        ) 2.3em 4em,
+        radial-gradient(
+            3.5em 6.28571em at 4.55em,
+            rgba($color, 0) 50%,
+            rgba($color, 0.25) 50%,
+            rgba($color, 0.25) 55%,
+            rgba($color, 0) 55%
+        ) 0 0,
+        radial-gradient(
+            3.5em 6.28571em at -1.05em,
+            rgba($color, 0) 50%,
+            rgba($color, 0.25) 50%,
+            rgba($color, 0.25) 55%,
+            rgba($color, 0) 55%
+        ) 3.5em 5.5em,
+        radial-gradient(rgba(darken($background, 50), 0.50), lighten($color, 50));
+        background-color: $background;
+        background-size:
+            1.5em 11em,
+            1.5em 11em,
+            2.3em 8em,
+            2.3em 8em,
+            3.5em 11em,
+            3.5em 11em,
+            100% 100%;
+  background-repeat: repeat;
+}
+
+@mixin spirals_background($color, $background, $scale){
+    $color-3: $color;
+    $color-3-t: transparentize($color-3, 1);
+
+    $color-4: $background;
+    $color-4-t: transparentize($color-4, 1);
+    $size: ($scale * 2.8em);
+    $size-half: $size/2;
+    $begin: $size/9.53;
+    $step: $size/18;
+    $space: $size/8.4;
+    $step-s: $step/1.5;
+
+    $step-b: $space;
+    $step-e: $space + $step;
+    $step-b-2: $space*2 + $step;
+    $step-e-2: $space*2 + $step*2;
+    $step-b-3: $space*3 + $step*2;
+    $step-e-3: $space*3 + $step*3;
+
+    $small-b: ($space*3 + $step)/2;
+    $small-e: $small-b + $step;
+    $small-b-2: $small-b + $step + $space;
+    $small-e-2: $small-b + $step*2 + $space;
+
+    $small-c: $size + $space - $step/1.9;
+    background:
+    radial-gradient(circle at right,
+      $color-3-t $step-b,
+      $color-3 $step-b, $color-3 $step-e,
+      $color-3-t $step-e, $color-3-t $step-b-2,
+      $color-3 $step-b-2, $color-3 $step-e-2,
+      $color-3-t $step-e-2, $color-3-t $step-b-3,
+      $color-3 $step-b-3, $color-3 $step-e-3,
+      $color-3-t $step-e-3
+      ) 0 0,
+    radial-gradient(circle at left,
+      $color-3-t $small-b,
+      $color-3 $small-b, $color-3 $small-e,
+      $color-3-t $small-e, $color-3-t $small-b-2,
+      $color-3 $small-b-2, $color-3 $small-e-2,
+      $color-3-t $small-e-2
+      ) 0 $small-c,
+
+    linear-gradient(to right top,
+      $color-3 $step,
+      $color-3-t $step
+      ) $small-e-2 $step,
+     linear-gradient(to left top,
+      $color-3 $step,
+      $color-3-t $step
+      ) $small-e-2 $step,
+    linear-gradient(to right bottom,
+      $color-3 $step,
+      $color-3-t $step
+      ) $small-e-2 $step,
+     linear-gradient(to left bottom,
+      $color-3 $step,
+      $color-3-t $step
+      ) $small-e-2 $step
+    ;
+  background-size: $size $size;
+  background-color: $background;
+}
+
+@mixin animated_radial_halftone_background($color, $background, $size){
+    @include radial_halftone_background($color, $background, $size);
+    &:before {
+      animation: gradient-animation-east 120s ease infinite;
+    }
+    &:after {
+      animation: gradient-animation-west 120s ease infinite;
+    }
+}
+
+@mixin radial_halftone_background($color, $background, $size){
+    background-color: $background;
+	background-image:
+    radial-gradient(circle at center center, black, #ccc),
+	  repeating-radial-gradient(circle at center center, black, black, 1rem, transparent 2rem, transparent 1rem);
+  background-blend-mode: multiply;
+
+
+  &:before {
+    content: '';
+    left: 0;
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    top:0px;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 1px,
+        rgba(0, 0, 0, .1) 1px,
+        rgba(255,255,255, .05) ($size * 5px)
+      );
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    top:0px;
+    right: 0;
+    background:
+      repeating-linear-gradient(
+        -45deg, transparent,
+        transparent 1px,
+        rgba(0, 0, 0, .1) 1px,
+        rgba(255,255,255, .05) ($size * 5px)
+      );
+    }
 }
 
 @mixin couch_background($background, $color, $size) {
