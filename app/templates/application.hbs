@@ -15,57 +15,5 @@
   </footer>
 </app-header>
 <app-drawer id="drawer" swipe-open>
-  <div  class="sidebar"><div  class="sidebar-content">
-    <ex-panda-list
-      id="list-root"
-      orientation="vertical"
-    >
-      <ex-panda-item  name="Rainbow Burst" href="{{href-to 'rainbow_burst'}}"></ex-panda-item>
-      <ex-panda-group
-        name="Wood Grains"
-        color="#111111"
-        font="italic small-caps bold 1.2em 'Poiret One', cursive;"
-        back_font="italic small-caps bold 0.6em 'Poiret One', cursive;"
-        bg="linear-gradient(-30deg, #555555, #CCCCCC);"
-      >
-        <ex-panda-item  name="Ash" href="{{href-to 'ash'}}"></ex-panda-item>
-        <ex-panda-item  name="Mahogony" href="{{href-to 'mahogony'}}"></ex-panda-item>
-        <ex-panda-item  name="Cherry" href="{{href-to 'cherry'}}"></ex-panda-item>
-        <ex-panda-item  name="Ebony" href="{{href-to 'ebony'}}"></ex-panda-item>
-      </ex-panda-group>
-      <ex-panda-group
-        name="Textiles"
-        color="#111111"
-        font="italic small-caps bold 1.2em 'Poiret One', cursive;"
-        back_font="italic small-caps bold 0.6em 'Poiret One', cursive;"
-        bg="linear-gradient(-30deg, #555555, #CCCCCC);"
-      >
-        <ex-panda-item  name="Weave" href="{{href-to 'weave'}}"></ex-panda-item>
-        <ex-panda-item  name="Tartan" href="{{href-to 'tartan'}}"></ex-panda-item>
-        <ex-panda-item  name="Tight Plaid" href="{{href-to 'tight_plaid'}}"></ex-panda-item>
-        <ex-panda-item  name="Loose Plaid" href="{{href-to 'loose_plaid'}}"></ex-panda-item>
-        <ex-panda-item  name="Upholstery" href="{{href-to 'couch'}}"></ex-panda-item>
-      </ex-panda-group>
-      <ex-panda-group
-        name="Other Textures"
-        color="#111111"
-        font="italic small-caps bold 1.2em 'Poiret One', cursive;"
-        back_font="italic small-caps bold 0.6em 'Poiret One', cursive;"
-        bg="linear-gradient(-30deg, #555555, #CCCCCC);"
-      >
-        <ex-panda-item  name="Spikey" href="{{href-to 'spikey'}}"></ex-panda-item>
-        <ex-panda-item  name="Spotty" href="{{href-to 'spotty'}}"></ex-panda-item>
-        <ex-panda-item  name="Wavey" href="{{href-to 'wavey'}}"></ex-panda-item>
-        <ex-panda-item  name="Big Waves" href="{{href-to 'big_waves'}}"></ex-panda-item>
-        <ex-panda-item  name="Diamond" href="{{href-to 'diamond'}}"></ex-panda-item>
-        <ex-panda-item  name="Blueprint" href="{{href-to 'blueprint'}}"></ex-panda-item>
-        <ex-panda-item  name="Aquatic" href="{{href-to 'aquatic'}}"></ex-panda-item>
-        <ex-panda-item  name="Spirals" href="{{href-to 'spirals'}}"></ex-panda-item>
-        <ex-panda-item  name="Radial Halftone" href="{{href-to 'radial_halftone'}}"></ex-panda-item>
-        <ex-panda-item  name="Triangles" href="{{href-to 'triangle'}}"></ex-panda-item>
-        <ex-panda-item  name="Arches" href="{{href-to 'arches'}}"></ex-panda-item>
-        <ex-panda-item  name="Vertical Stripes" href="{{href-to 'vertical_stripes'}}"></ex-panda-item>
-      </ex-panda-group>
-    </ex-panda-list>
-</div></div>
+  {{partial 'sidebar'}}
 </app-drawer>

@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'scss-textures-website',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -45,7 +45,8 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    ENV.rootURL = '/scss-textures/'
+    ENV.rootURL = '/scss-textures/';
+    ENV.location = 'hash';
   }
 
   return ENV;
