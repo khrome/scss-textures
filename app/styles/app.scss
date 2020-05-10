@@ -1,0 +1,149 @@
+@import 'node_modules/scss-textures/textures.scss';
+
+ex-panda-group{
+}
+
+ex-panda-item{
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+}
+
+.title{
+    font-size: 1.5em;
+    font-weight: 800;
+    text-shadow:
+        1px 1px 0px white,
+        -1px 1px 0px white,
+        1px -1px 0px white,
+        -1px -1px 0px white,
+        2px 2px 0px white,
+        1px 2px 0px white,
+        2px 1px 0px white,
+        -2px 2px 0px white,
+        -1px 2px 0px white,
+        -2px 1px 0px white,
+        2px -2px 0px white,
+        1px -2px 0px white,
+        2px -1px 0px white,
+        -2px -2px 0px white,
+        -1px -2px 0px white,
+        -2px -1px 0px white;
+}
+
+html{
+   height: 100%;
+   overflow: hidden;
+}
+body{
+    margin:0px;
+    overflow: hidden;
+}
+
+.content{
+    height: 100vh;
+    margin-bottom: -50px;
+}
+
+.rainbow_burst_background{ @include rainbow_burst_background() }
+
+.ash_background{ @include ash_background() }
+.mahogony_background{ @include mahogony_background() }
+.cherry_background{ @include cherry_background() }
+.ebony_background{ @include ebony_background() }
+
+.weave_background{ @include weave_background(#4488DD, 1)}
+.loose_plaid_background{ @include loose_plaid_background(#0000DD, #00DD00, 0.5)}
+.tight_plaid_background{ @include tight_plaid_background(#CC2222, #2222CC, 1)}
+.tartan_background{ @include tartan_background(#449944, 0.5)}
+.couch_background{ @include couch_background(#991111, #111111, 1)}
+
+.spikey_background{ @include spikey_background(#AF2483, 4)}
+.spotty_background{ @include spotty_background(#FF88DD, #CCDD22, 0.5)}
+.wavey_background{ @include wavey_background(#4488DD, #CCDD22, 3)}
+.big_waves_background{ @include big_waves_background(#484848, #444444, 3)}
+.diamond_background{ @include diamond_background(#4488DD, #CCDD22, 3)}
+
+.blueprint_background{ @include blueprint_background(#DDDDDD, #4488DD, 1.5)}
+.aquatic_background{ @include aquatic_background(#AABBDD, #5555AA, 1)}
+.spirals_background{ @include spirals_background(#991111, #999999, 3)}
+.radial_halftone_background{ @include radial_halftone_background(#4455AA, #44DD22, 3)}
+.triangle_background{ @include triangle_background(#4488DD, #CCDD22, 2)}
+.arches_background{ @include arches_background(#CC2222, #CCCCCC, 2)}
+.vertical_stripes_background{ @include vertical_stripes_background(#116622, 3)}
+
+
+h1, h2, h3, h4, h5, div.title, .card p, footer, ex-panda-item{
+    font-family: 'Poiret One', cursive;
+}
+app-header{
+    height: 100vh;
+}
+app-drawer{
+    background-color: grey;
+    background: linear-gradient(-30deg, rgba(#555555, 0.5), rgba(#CCCCCC, 0.5));
+}
+.sidebar{
+    background-color: grey;
+    height:100%;
+    background: linear-gradient(-30deg, #555555, #CCCCCC);
+    overflow: scroll;
+    position:relative;
+}
+.sidebar-content{
+
+}
+app-toolbar{
+    background-color: grey;
+    background: linear-gradient(-30deg, #555555, #CCCCCC);
+    z-index: 1;
+    box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer{
+    background-color: grey;
+    background: linear-gradient(-30deg, #555555, #CCCCCC);
+    width : 100%;
+    height : 30px;
+    bottom: 0px;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    padding-top: 15px;
+    box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  padding: 16px 40px;
+  height: 100%;
+}
+
+.card {
+  background-color: white;
+  max-width: 720px;
+  height: 50%;
+  margin: 16px auto;
+  margin-top: 5%;
+  box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  position:relative;
+  background: linear-gradient(-30deg, #555555, #CCCCCC);
+  text-align: center;
+}
+
+.card h1{
+    display: inline-block;
+    margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+
+  .content {
+    padding: 0;
+  }
+
+  .card{
+    margin: 8px;
+  }
+
+}
