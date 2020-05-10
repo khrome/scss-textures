@@ -3,14 +3,12 @@ import appLayout from '@polymer/app-layout';
 import ironIcons from '@polymer/iron-icons';
 import paperIconButton from '@polymer/paper-icon-button';
 import exPanda from 'ex-panda';
-import config from '../config/environment';
+//import config from '../config/environment';
 
 window.rebuildOn = function(location){
-    window.location = window.location.origin+'/#/'+location;
+    window.location = window.location.origin+window.location.pathname+'#/'+location;
     window.location.reload();
 }
-
-console.log('CONFIG', config);
 
 export default Route.extend({
     model : function(params){
