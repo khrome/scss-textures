@@ -603,43 +603,20 @@ $rainbowBurstColors : #fedc00 0,
 
 @mixin radial_halftone_background($color, $background, $size){
     background-color: $background;
-	background-image:
-    radial-gradient(circle at center center, black, #ccc),
-	  repeating-radial-gradient(circle at center center, black, black, 1rem, transparent 2rem, transparent 1rem);
-  background-blend-mode: multiply;
+    background-image: radial-gradient(circle at center center, black, #ccc),
+        repeating-radial-gradient(circle at center center, black, black, 1rem, transparent 2rem, transparent 1rem);
+    background-blend-mode: difference;
+    filter: contrast(7);
+    --mask: linear-gradient($color, #{rgba($color, .45)});
 
-
-  &:before {
-    content: '';
-    left: 0;
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    top:0px;
-    background:
-      repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 1px,
-        rgba(0, 0, 0, .1) 1px,
-        rgba(255,255,255, .05) ($size * 5px)
-      );
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    top:0px;
-    right: 0;
-    background:
-      repeating-linear-gradient(
-        -45deg, transparent,
-        transparent 1px,
-        rgba(0, 0, 0, .1) 1px,
-        rgba(255,255,255, .05) ($size * 5px)
-      );
+    &::before {
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        background: radial-gradient($color, transparent) 0 0/ 1em 1em space;
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+        content: ''
     }
 }
 

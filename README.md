@@ -20,52 +20,54 @@ No Argument Mixins
 
 These macros do not take any configuration:
 
-- rainbow_burst_background()
-- ash_background()
-- mahogony_background()
-- cherry_background()
-- ebony_background()
+- rainbow_burst_background() ([Demo](https://khrome.github.io/scss-textures/#/rainbow_burst))
+- ash_background() ([Demo](https://khrome.github.io/scss-textures/#/ash))
+- mahogony_background() ([Demo](https://khrome.github.io/scss-textures/#/mahogony))
+- cherry_background() ([Demo](https://khrome.github.io/scss-textures/#/cherry))
+- ebony_background() ([Demo](https://khrome.github.io/scss-textures/#/ebony))
 
-The Wood Mixin
+The Helper Mixins
 --------------
 
-The wood macro is a special case generator to make semi-realistic wood textures using a single div and two pseudoelements.
+There are some helper mixins that are used to make others:
 
 - wood_ish($color, $thickness, $opacity, $appendGrad, $appendSizes)
+- cubes_background($colorA, $colorB, $colorC, $size)
 
 Standard Mixins
 ---------------
 The vast majority of the mixins take foreground, background and a scaling factor:
 
-- spikey_background($color, $size)
 - biohazard_background($color, $background, $size)
-- spotty_background($color, $background, $size)
-- wavey_background($color, $background, $size)
-- big_waves_background($color, $background, $size)
-- loose_plaid_background($color, $background, $size)
-- tight_plaid_background($color, $background, $size)
-- diamond_background($color, $background, $size)
-- blueprint_background($color, $background, $size)
+- spotty_background($color, $background, $size) ([Demo](https://khrome.github.io/scss-textures/#/spotty))
+- wavey_background($color, $background, $size) ([Demo](https://khrome.github.io/scss-textures/#/wavey))
+- big_waves_background($color, $background, $size) ([Demo](https://khrome.github.io/scss-textures/#/big_waves))
+- loose_plaid_background($color, $background, $size) ([Demo](https://khrome.github.io/scss-textures/#/loose_plaid))
+- tight_plaid_background($color, $background, $size) ([Demo](https://khrome.github.io/scss-textures/#/tight_plaid))
+- diamond_background($color, $background, $size) ([Demo](https://khrome.github.io/scss-textures/#/diamond))
+- blueprint_background($color, $background, $size) ([Demo](https://khrome.github.io/scss-textures/#/blueprint))
 - woody_background($color, $background, $size)
-- aquatic_background($color, $background, $size)
-- spirals_background($color, $background, $scale)
-- animated_radial_halftone_background($color, $background, $size)
-- radial_halftone_background($color, $background, $size)
-- couch_background($background, $color, $size)
-- triangle_background($color, $background, $size)
+- aquatic_background($color, $background, $size) ([Demo](https://khrome.github.io/scss-textures/#/aquatic))
+- spirals_background($color, $background, $scale) ([Demo](https://khrome.github.io/scss-textures/#/spirals))
+- radial_halftone_background($color, $background, $size) ([Demo](https://khrome.github.io/scss-textures/#/radial_halftone))
+- couch_background($background, $color, $size) ([Demo](https://khrome.github.io/scss-textures/#/couch))
+- triangle_background($color, $background, $size) ([Demo](https://khrome.github.io/scss-textures/#/triangle))
 - argyle_background($color, $lineColor, $size)
-- arches_background($color, $background, $size)
-- vertical_stripes_background($color, $size)
-- weave_background($color, $size)
-- tartan_background($color, $size)
+- arches_background($color, $background, $size) ([Demo](https://khrome.github.io/scss-textures/#/arches))
 - hex_background($color, $background, $size)
 - sloped_background($color, $background, $size)
-- cubes_background($colorA, $colorB, $colorC, $size)
-- cubes_up_background($color, $size)
-- cubes_down_background($color, $size)
 - zigzag_background($color, $background, $size)
 - dotted_background($color, $background, $size)
 - starry_background($color, $background, $size)
+
+But some take just a color and a scaling factor:
+
+- spikey_background($color, $size) ([Demo](https://khrome.github.io/scss-textures/#/spikey))
+- vertical_stripes_background($color, $size) ([Demo](https://khrome.github.io/scss-textures/#/vertical_stripes))
+- weave_background($color, $size) ([Demo](https://khrome.github.io/scss-textures/#/weave))
+- tartan_background($color, $size) ([Demo](https://khrome.github.io/scss-textures/#/tartan))
+- cubes_up_background($color, $size)
+- cubes_down_background($color, $size)
 
 
 Testing

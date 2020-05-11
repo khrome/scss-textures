@@ -1,6 +1,6 @@
 {
     "name": "scss-textures",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "description": "Configurable Element backgrounds in SCSS",
     "keywords": [
         "scss",
@@ -11,11 +11,11 @@
     "author": "Abbey Hawk Sparrow <@khrome> (http://patternweaver.com)",
     "contributors": [],
     "bugs": {
-    "url": "https://github.com/khrome/scss-textures/issues"
+        "url": "https://github.com/khrome/scss-textures/issues"
     },
     "license": "MIT",
     "repository": {
-    "type": "git",
-    "url": "git://github.com/khrome/scss-textures.git"
+        "type": "git",
+        "url": "git://github.com/khrome/scss-textures.git"
     }
 }
