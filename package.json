@@ -16,8 +16,8 @@
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test",
-    "make-release":"ember github-pages:commit --message 'gh-pages release'",
-    "deploy":"git push origin gh-pages:gh-pages"
+    "make-release": "ember github-pages:commit --message 'gh-pages release'",
+    "deploy": "git push origin gh-pages:gh-pages"
   },
   "devDependencies": {
     "@ember/jquery": "^0.6.0",
@@ -61,6 +61,6 @@
     "@polymer/iron-icons": "^3.0.1",
     "@polymer/paper-icon-button": "^3.0.2",
     "ex-panda": "0.0.6",
-    "scss-textures": "0.0.2"
+    "scss-textures": "^0.1.0"
   }
 }

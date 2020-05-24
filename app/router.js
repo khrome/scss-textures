@@ -32,6 +32,13 @@ Router.map(function() {
   this.route('loose_plaid');
   this.route('tight_plaid');
   this.route('couch');
+  this.route('biohazard');
+  this.route('zigzag');
+  this.route('cubes_up');
+  this.route('cubes_down');
+  this.route('argyle');
+  this.route('starry');
+  this.route('hex');
 });
 
 export default Router;
