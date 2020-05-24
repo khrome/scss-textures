@@ -72,6 +72,8 @@ body{
 .arches_background{ @include arches_background(#CC2222, #CCCCCC, 2)}
 .vertical_stripes_background{ @include vertical_stripes_background(#116622, 3)}
 .zigzag_background{ @include zigzag_background(#BBBB22, #000000, 1)}
+.hex_background{ @include hex_background(#CC2222, #CCCCCC, 2)}
+.starry_background{ @include starry_background(#CC2222, #CCCCCC, 2)}
 .biohazard_background{ @include biohazard_background(#BB2222, #000000, 3)}
 .cubes_up_background{ @include cubes_up_background(#BB2222, 2)}
 .cubes_down_background{ @include cubes_down_background(#BB2222, 2)}
